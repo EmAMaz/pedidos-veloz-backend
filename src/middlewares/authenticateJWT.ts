@@ -13,9 +13,9 @@ export const authenticateJWT = (
 ) => {
   try {
     const authHeader = req.headers.authorization;
-
+    if (authHeader === undefined) res.status(401).json({message: "No autorizado"});
     if (authHeader) {
-      const decoded = jwt.verify(authHeader, "secretKey") as { name: string; email: string };
+      const decoded = jwt.verify(authHeader.split(" ")[1], "secretKey") as { name: string; email: string };
 
       req.name = decoded.name;
       req.email = decoded.email;
