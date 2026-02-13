@@ -133,14 +133,7 @@ class UsuariosController {
   }
 
   async tokenExpired(req: Request, res: Response) {
-    const { token } = req.body;
     try {
-      await new Promise((resolve, reject) => {
-        jwt.verify(token, "secretKey", (err: any, decoded: any) => {
-          if (err) reject(err);
-          else resolve(decoded);
-        });
-      });
       res.status(200).json({ message: "Token válido" });
     } catch (err) {
       if (err instanceof Error) {
