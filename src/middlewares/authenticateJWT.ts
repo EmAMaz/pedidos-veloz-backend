@@ -13,7 +13,7 @@ export const authenticateJWT = (
 ) => {
   try {
     const authHeader = req.headers.authorization;
-    if (authHeader === undefined) res.status(401).json({message: "No autorizado"});
+    if(!authHeader) res.status(401).json({message: "Token no proporcionado"});
     if (authHeader) {
       const decoded = jwt.verify(authHeader.split(" ")[1], "secretKey") as { name: string; email: string };
 
