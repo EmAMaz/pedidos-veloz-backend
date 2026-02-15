@@ -1,3 +1,5 @@
+# Pedidos Veloz Backend
+
 Backend: Micro-E-commerce Order Engine (WhatsApp Integration)
 Este es un backend robusto y escalable diseñado para plataformas de ventas de nicho (bebidas, productos curados) que priorizan la velocidad de conversión mediante una arquitectura de Single-Page Ordering.
 
@@ -35,5 +37,5 @@ git clone https://github.com/EmAMaz/pedidos-veloz-backend.git
 npm install
 
 # Configurar variables de entorno (.env)
-PORT=3000
-DATABASE_URL_DEV=tu_url_de_base_de_datos
+- PORT=3000.
+- DATABASE_URL_DEV=tu_url_de_base_de_datos
